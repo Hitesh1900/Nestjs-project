@@ -1,4 +1,4 @@
-// src/functions/response.function.ts
+
 
 interface SuccessResponse {
     success: true;

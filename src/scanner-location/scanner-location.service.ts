@@ -1,4 +1,4 @@
-// src/scanner-location/scanner-location.service.ts
+
 
 import { Injectable, Inject } from '@nestjs/common';
 import { ScannerLocation } from '../models/scannerlocation.model';

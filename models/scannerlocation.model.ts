@@ -1,7 +1,6 @@
-// src/models/scannerlocation.model.ts
 
 import { DataTypes, Model } from 'sequelize';
-import { sequelize } from '../src/config/database'; // Assuming database configuration
+import { sequelize } from '../src/config/database'; 
 
 class ScannerLocation extends Model {
   public id!: number;
@@ -10,9 +9,7 @@ class ScannerLocation extends Model {
   public longitude!: number;
   public address!: string;
 
-  // Add other fields as needed
-
-  // Timestamps
+  
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
@@ -45,7 +42,7 @@ ScannerLocation.init(
   {
     sequelize,
     modelName: 'ScannerLocation',
-    tableName: 'scanner_locations', // Adjust table name as per your database
+    tableName: 'scanner_locations', 
   },
 );
 

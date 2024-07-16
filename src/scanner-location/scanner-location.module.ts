@@ -1,4 +1,4 @@
-// src/scanner-location/scanner-location.service.ts
+
 
 import { Injectable, Inject } from '@nestjs/common';
 import { ScannerLocation } from '../models/scanner-location.model';
@@ -19,7 +19,6 @@ export class ScannerLocationService {
       let desiredLocation = await this.scannerLocationRepository.findOne({ where: { device_id } });
 
       if (desiredLocation) {
-        // Update location if device_id exists
         await this.scannerLocationRepository.update(
           { latitude, longitude, address },
           { where: { device_id } },
@@ -34,7 +33,6 @@ export class ScannerLocationService {
         logger.info(`Updated location for device_id: ${device_id}`, { service: this.service_module });
         return OPERATION_SUCCESS('Location updated successfully', updateLocation);
       } else {
-        // Create new location if device_id does not exist
         let newLocation = await this.scannerLocationRepository.create({ device_id, latitude, longitude, address });
         logger.info(`Created new location for device_id: ${device_id}`, { service: this.service_module });
         return OPERATION_SUCCESS('Location created successfully', newLocation);
